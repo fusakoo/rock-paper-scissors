@@ -3,6 +3,79 @@
     <body>
         <script>
             // script goes here
+            let playerScore = 0;
+            let computerScore= 0;
+            let roundCount = 0;
+            
+            function computerPlay() {
+                const choices = ['rock', 'paper', 'scissors'];
+                let computerChoice = choices[Math.floor(Math.random() * choices.length)];
+                return computerChoice;
+            }
+
+            function getPlayerSelection() {
+                let playerInput = prompt('Pick your move: Rock, Paper, or Scissors?', 'Rock');
+                let playerChoice = playerInput.toLowerCase();
+                if (playerChoice === 'rock' || playerChoice === 'paper' || playerChoice === 'scissors') {
+                    return playerChoice;
+                    } else {
+                    console.log('Invalid choice.')
+                }
+            }
+
+            function playRound(playerSelection, computerSelection) {                
+                playerSelection = getPlayerSelection();
+                computerSelection = computerPlay();
+                let result = '';
+
+                console.log('Computer chose: ', computerSelection);
+                console.log('Player choce: ', playerSelection);
+                
+                if (playerSelection === computerSelection) {
+                    result = 'Wow there, same move! Please play again.';
+                } else if (
+                    ((playerSelection === 'rock') && (computerSelection === 'scissors')) ||
+                    ((playerSelection === 'paper') && (computerSelection === 'rock')) ||
+                    ((playerSelection === 'scissors') && (computerSelection === 'paper'))
+                ) {
+                    result = `You won! ${playerSelection} beats ${computerSelection}.`;
+                    playerScore++;
+                } else {
+                    result = `You lost! ${computerSelection} beats ${playerSelection}.`;
+                    computerScore++;
+                }
+                
+                roundCount++;
+                let roundScore = `Round ${roundCount} score: Player @ ${playerScore} vs Computer @ ${computerScore}`; 
+                let roundResult = result + " " + roundScore;
+                return roundResult;
+            }
+
+            function game(){
+                let i;
+                let gameResult;
+                let gamePlayerScore;
+                let gameComputerScore;
+
+                for (i = 0; i < 5; i++) {
+                    console.log(playRound());
+                    gamePlayerScore = playerScore;
+                    gameComputerScore = computerScore;
+                }
+
+                if (gamePlayerScore > gameComputerScore) {
+                    gameResult = 'Player, you won! Congrats!';
+                } else if (gamePlayerScore < gameComputerScore) {
+                    gameResult = 'Computer is the winner!'
+                } else {
+                    gameResult = 'Hm, that\'s weird. There should\'ve been a winner.'
+                }
+
+                let gameEndScore = `Game result: Player score ${gamePlayerScore} vs ${gameComputerScore}`
+                return gameResult + gameEndScore;
+            }
+
+            console.log(game())
         </script>
     </body>
 </html>
