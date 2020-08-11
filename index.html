@@ -24,6 +24,7 @@
                     return 'scissors';
                 } else {
                     console.log('Invalid choice.');
+                    return undefined;
                 }
             }
 
@@ -32,6 +33,12 @@
                 computerSelection = computerPlay();
                 let result = '';
 
+                if (playerSelection === undefined) {
+                    console.log('Uh oh, something went wrong. Try reloading the page to play again.');
+                } else {
+                    console.log('Computer chose: ', computerSelection.toUpperCase());
+                    console.log('Player chose: ', playerSelection.toUpperCase());
+                }
                 
                 if (playerSelection === computerSelection) {
                     result = 'Wow there, same move! Please play again.';
