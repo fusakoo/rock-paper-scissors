@@ -16,10 +16,14 @@
             function getPlayerSelection() {
                 let playerInput = prompt('Pick your move: Rock, Paper, or Scissors?', 'Rock');
                 let playerChoice = playerInput.toLowerCase();
-                if (playerChoice === 'rock' || playerChoice === 'paper' || playerChoice === 'scissors') {
-                    return playerChoice;
-                    } else {
-                    console.log('Invalid choice.')
+                if (playerChoice === 'rock' || playerChoice === 'rocks') {
+                    return 'rock';
+                } else if (playerChoice === 'paper' || playerChoice === 'papers') {
+                    return 'paper';
+                } else if (playerChoice === 'scissors' || playerChoice === 'scissor') {
+                    return 'scissors';
+                } else {
+                    console.log('Invalid choice.');
                 }
             }
 
@@ -28,8 +32,6 @@
                 computerSelection = computerPlay();
                 let result = '';
 
-                console.log('Computer chose: ', computerSelection);
-                console.log('Player choce: ', playerSelection);
                 
                 if (playerSelection === computerSelection) {
                     result = 'Wow there, same move! Please play again.';
@@ -38,15 +40,15 @@
                     ((playerSelection === 'paper') && (computerSelection === 'rock')) ||
                     ((playerSelection === 'scissors') && (computerSelection === 'paper'))
                 ) {
-                    result = `You won! ${playerSelection} beats ${computerSelection}.`;
+                    result = `You won! ${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}.`;
                     playerScore++;
                 } else {
-                    result = `You lost! ${computerSelection} beats ${playerSelection}.`;
+                    result = `You lost! ${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}.`;
                     computerScore++;
                 }
                 
                 roundCount++;
-                let roundScore = `Round ${roundCount} score: Player @ ${playerScore} vs Computer @ ${computerScore}`; 
+                let roundScore = `Round ${roundCount} score: Player ${playerScore} vs Computer ${computerScore}`; 
                 let roundResult = result + " " + roundScore;
                 return roundResult;
             }
@@ -72,7 +74,7 @@
                 }
 
                 let gameEndScore = `Game result: Player score ${gamePlayerScore} vs ${gameComputerScore}`
-                return gameResult + gameEndScore;
+                return gameResult + " " + gameEndScore;
             }
 
             console.log(game())
