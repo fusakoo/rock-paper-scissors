@@ -74,9 +74,9 @@ function game(){
     if (gamePlayerScore > gameComputerScore) {
         gameResult = 'Player, you won! Congrats!';
     } else if (gamePlayerScore < gameComputerScore) {
-        gameResult = 'Computer is the winner!'
+        gameResult = 'Computer is the winner!';
     } else {
-        gameResult = 'Seems like it\'s a tie!'
+        gameResult = 'Seems like it\'s a tie!';
     }
 
     if (i = 5) {
