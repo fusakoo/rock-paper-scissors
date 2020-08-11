@@ -33,7 +33,7 @@ function playRound(playerSelection, computerSelection) {
     let result = '';
 
     if (playerSelection === undefined) {
-        console.log('Uh oh, something went wrong. Try reloading the page to play again.');
+        console.log('Uh oh, something went wrong. Click on the Start Game button to retry.');
     } else {
         console.log('Computer chose: ', computerSelection.toUpperCase());
         console.log('Player chose: ', playerSelection.toUpperCase());
