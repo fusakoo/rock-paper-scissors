@@ -40,7 +40,7 @@ function playRound(playerSelection, computerSelection) {
     }
     
     if (playerSelection === computerSelection) {
-        result = 'Wow there, same move! Please play again.';
+        result = 'Wow there, same move!';
     } else if (
         ((playerSelection === 'rock') && (computerSelection === 'scissors')) ||
         ((playerSelection === 'paper') && (computerSelection === 'rock')) ||
@@ -76,9 +76,11 @@ function game(){
     } else if (gamePlayerScore < gameComputerScore) {
         gameResult = 'Computer is the winner!'
     } else {
-        gameResult = 'Hm, that\'s weird. There should\'ve been a winner.'
+        gameResult = 'Seems like it\'s a tie!'
     }
 
-    let gameEndScore = `Game result: Player score ${gamePlayerScore} vs ${gameComputerScore}`
-    return gameResult + " " + gameEndScore;
+    if (i = 5) {
+        let gameEndScore = `Game result: Player ${gamePlayerScore} vs Computer ${gameComputerScore}`;
+        console.log(gameResult + " " + gameEndScore);
+    }
 }
