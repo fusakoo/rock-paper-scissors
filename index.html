@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Rock, Paper, Scissors</title>
+        <meta charset="UTF-8"/>
+    </head>
     <body>
         <script>
             // script goes here
@@ -15,16 +19,20 @@
 
             function getPlayerSelection() {
                 let playerInput = prompt('Pick your move: Rock, Paper, or Scissors?');
-                let playerChoice = playerInput.toLowerCase();
-                if (playerChoice === 'rock' || playerChoice === 'rocks') {
-                    return 'rock';
-                } else if (playerChoice === 'paper' || playerChoice === 'papers') {
-                    return 'paper';
-                } else if (playerChoice === 'scissors' || playerChoice === 'scissor') {
-                    return 'scissors';
+                if (playerInput === null) {
+                    console.log('Game cancelled.');
                 } else {
-                    console.log('Invalid choice.');
-                    return undefined;
+                    let playerChoice = playerInput.toLowerCase();
+                    if (playerChoice === 'rock' || playerChoice === 'rocks') {
+                        return 'rock';
+                    } else if (playerChoice === 'paper' || playerChoice === 'papers') {
+                        return 'paper';
+                    } else if (playerChoice === 'scissors' || playerChoice === 'scissor') {
+                        return 'scissors';
+                    } else {
+                        console.log('Invalid choice.');
+                        return undefined;
+                    }
                 }
             }
 
