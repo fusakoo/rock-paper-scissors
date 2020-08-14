@@ -11,6 +11,8 @@ body {
     min-height: 100vh;
 }
 
+/* Main */
+
 main {
     margin: 2em 10em;
     display: flex;
@@ -27,6 +29,8 @@ h1, h2 {
 .instruction {
     font-size: 25px;
 }
+
+/* Scoreboard with round & current scores*/
 
 #score-container {
     margin: 10px 20px 0 20px;
@@ -49,6 +53,8 @@ h1, h2 {
     padding: 20px;
     border-radius: 5px;
 }
+
+/* Player button selection */
 
 .player-container {
     margin: 1em 0;
@@ -105,6 +111,8 @@ i {
     }
 }
 
+/* Result display & restart button*/
+
 .margin-bottom {
     margin-bottom: 20px;
 }
@@ -128,6 +136,8 @@ i {
 
     transform: rotate(10deg) scale(1.1);
 }
+
+/* footer */
 
 footer {
     text-align: center;

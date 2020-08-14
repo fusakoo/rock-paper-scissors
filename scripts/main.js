@@ -2,6 +2,8 @@ let playerScore = 0;
 let computerScore= 0;
 let roundCount = 0;
 
+// Variables
+
 const restartButton = document.createElement('button');
 restartButton.classList.add('restart');
 const buttons = document.querySelectorAll('button');
@@ -23,6 +25,7 @@ function computerPlay() {
     return computerChoice;
 }
 
+// Play round of match
 function playRound(playerSelection, computerSelection) {       
     // Get player choice by looking at target's id    
     playerSelection = this.getAttribute('id');
@@ -50,11 +53,13 @@ function playRound(playerSelection, computerSelection) {
     checkScore();
 }
 
+// Event listener when player selects the move
 buttons.forEach(button => button.addEventListener('click', playRound));
 displayPlayerScore.textContent = playerScore;
 displayComputerScore.textContent = computerScore;
 restartButton.textContent = 'Reset';
 
+// Check current score & compare with the winning condition of '5'
 function checkScore() {
     if (playerScore >= 5) {
         gameResult.textContent = 'Player wins!';
@@ -69,6 +74,7 @@ function checkScore() {
     }
 }
 
+// Event listener to reset the game
 function finishGame(){
     roundContainer.appendChild(restartButton);
     restartButton.addEventListener('click', restartGame);
