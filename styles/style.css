@@ -11,28 +11,49 @@ main {
     margin: 5em 10em;
     display: flex;
     flex-direction: column;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
 }
 
 h1 {
     margin-bottom: 0.5em;
 }
 
-
-ul {
-    margin: 0.8em 0.5em;
+.player-container {
+    margin: 2em 0;
 }
 
-input {
-    border-radius: 5px;
+.player-choices {
+    border-radius: 50%;
     border: none;
-    margin-top: 1em;
-    margin-bottom: 2em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding: 14px 18px;
     background-color: #fff;
-    color: #2e2e2e;
     font-size: 15px;
     max-width: 200px;
+    cursor: pointer;
+}
+
+i {
+    background-color: #fff;
+    color: #2e2e2e;
+}
+
+.bounce {
+    animation-name: bounce;
+    animation-timing-function: ease;
+}
+
+@keyframes bounce {
+    0%   { transform: scale (1,1)      translateY(0);}
+    10%  { transform: scale (1.1,.9)   translateY(0);}
+    30%  { transform: scale (.9,1.1)   translateY(-100px);}
+    50%  { transform: scale (1.05,.95) translateY(0);}
+    58%  { transform: scale (1,1)      translateY(-7px);}
+    64%  { transform: scale (1,1)      translateY(0);}
+    100% { transform: scale (1,1)      translateY(0);}
 }
 
 input:hover {

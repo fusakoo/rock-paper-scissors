@@ -10,20 +10,32 @@
     <body>
         <main>
             <h1>Let's Play: Rock, Paper, Scissors!</h1>
-            <div id="scoreboard">
-                <p id="displayScore">Test Score</p>
-                <p id="displayResult">Test Result</p>
+            <p>First one to reach 5 points win!</p>
+            <div id="score-container">
+                <p>
+                    Round: <span id="round">0</span>
+                </p>
+                <p id="scoreboard">
+                    Player: <span id="player-score"></span> 
+                    Computer: <span id="computer-score"></span>
+                </p>
             </div>
-            <p>Choose your move</p>
             <div class="player-container">
-                <button id="rock"><i class="far fa-hand-rock"></i></button>
-                <button id="paper"><i class="far fa-hand-paper"></i></button>
-                <button id="scissors"><i class="far fa-hand-scissors"></i></button>
+                <p>Choose your move</p>
+                <div class="button-container">
+                    <button id="rock" class="player-choices"><i class="far fa-hand-rock"></i></button>
+                    <button id="paper" class="player-choices"><i class="far fa-hand-paper"></i></button>
+                    <button id="scissors" class="player-choices"><i class="far fa-hand-scissors"></i></button>
+                </div>
             </div>
-            <div id="roundStats">Test</div>
-            <div id="roundResult">Test</div>
+            <div class="round-container">
+                <div id="round-stats"></div>
+                <div id="round-result"></div>
+            </div>
             <script src="scripts/main.js" type="text/javascript"></script>
-            <a href="indexOld.html">Check out the Console Version</a>
         </main>
+        <footer>
+            <a href="indexOld.html">Check out the Console Version</a>
+        </footer>
     </body>
 </html>
