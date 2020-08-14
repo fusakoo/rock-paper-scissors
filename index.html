@@ -10,18 +10,18 @@
     <body>
         <main>
             <h1>Let's Play: Rock, Paper, Scissors!</h1>
-            <p>First one to reach 5 points win!</p>
+            <p class="instruction">First one to reach 5 points win!</p>
             <div id="score-container">
                 <p>
                     Round: <span id="round">0</span>
                 </p>
-                <p id="scoreboard">
-                    Player: <span id="player-score"></span> 
-                    Computer: <span id="computer-score"></span>
-                </p>
+                <div id="scoreboard">
+                    <p class="score">Player: <span id="player-score"></span></p> 
+                    <p class="score">Computer: <span id="computer-score"></span></p>
+                </div>
             </div>
             <div class="player-container">
-                <p>Choose your move</p>
+                <p class="instruction">Choose your move</p>
                 <div class="button-container">
                     <button id="rock" class="player-choices"><i class="far fa-hand-rock"></i></button>
                     <button id="paper" class="player-choices"><i class="far fa-hand-paper"></i></button>
@@ -29,8 +29,8 @@
                 </div>
             </div>
             <div class="round-container">
-                <div id="round-stats"></div>
-                <div id="round-result"></div>
+                <div id="round-stats" class="margin-bottom"></div>
+                <div id="round-result" class="margin-bottom"></div>
             </div>
             <script src="scripts/main.js" type="text/javascript"></script>
         </main>

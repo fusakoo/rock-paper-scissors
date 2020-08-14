@@ -3,6 +3,7 @@ let computerScore= 0;
 let roundCount = 0;
 
 const restartButton = document.createElement('button');
+restartButton.classList.add('restart');
 const buttons = document.querySelectorAll('button');
 
 const displayPlayerScore = document.querySelector('#player-score');
@@ -29,7 +30,7 @@ function playRound(playerSelection, computerSelection) {
     roundStats.textContent = `Player chose ${playerSelection.toUpperCase()}, Computer chose ${computerSelection.toUpperCase()}.`;
     
     if (playerSelection === computerSelection) {
-        roundResult.textContent = 'Wow there, same move!';
+        roundResult.textContent = 'Wow there, same move! That\'s a draw!';
     } else if (
         ((playerSelection === 'rock') && (computerSelection === 'scissors')) ||
         ((playerSelection === 'paper') && (computerSelection === 'rock')) ||
@@ -52,7 +53,7 @@ function playRound(playerSelection, computerSelection) {
 buttons.forEach(button => button.addEventListener('click', playRound));
 displayPlayerScore.textContent = playerScore;
 displayComputerScore.textContent = computerScore;
-restartButton.textContent = 'Retry';
+restartButton.textContent = 'Reset';
 
 function checkScore() {
     if (playerScore >= 5) {
